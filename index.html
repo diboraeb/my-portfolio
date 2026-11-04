@@ -11,6 +11,7 @@
 </head>
 <body>
 <header>
+    <canvas id="logo" width="120" height="120">Dibora Endris logo</canvas>
    <h1>Dibora Endris</h1>
    <img src="images/profile.png" alt="Portrait photo of me" width="200" height="200">
     <p>A Software Engineering Student and problem solver</p>
@@ -113,6 +114,7 @@ where the important content is &amp; helps screen readers.</p>
     <label for="lvl-css">CSS:</label>
     <meter id="lvl-css" value="0.4" max="1" min="0"  low="0.3" high="0.7" optimum="1">40%</meter>
 </p>
+<canvas id="skillChart" width="300" height="150"></canvas>
 <h3>My Learning Roadmap</h3>
 
 <ol type="1">
@@ -355,6 +357,43 @@ int main() {
     <p>&copy; 2026 Dibora Endris. All rights reserved.</p>
     <p>Last updated: <time datetime="2026-11-04">4 November 2026</time></p>
 </footer>
+<script>
+const canvas = document.getElementById('logo');
+const ctx = canvas.getContext('2d');
+ctx.fillStyle = "#000000";
+ctx.fillRect(0, 0, 120, 120);
+ctx.beginPath();
+ctx.arc(60, 60, 45, 0, 2 * Math.PI);
+ctx.fillStyle = "white";
+ctx.fill();
+ctx.fillStyle = "#000000";
+ctx.font = "bold 36px Arial";
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
+ctx.fillText("ED", 60, 62);
+const skillCanvas = document.getElementById('skillChart');
+const skillCtx = skillCanvas.getContext('2d');
 
+const skills = [
+    { name: "Python", value: 0.6 },
+    { name: "HTML", value: 0.6 },
+    { name: "JS", value: 0.5 },
+    { name: "C++", value: 0.9 },
+    { name: "CSS", value: 0.4 }
+];
+
+skills.forEach((skill, index) => {
+    const barHeight = skill.value * 120;
+    const x = 10 + index * 58;
+    const y = 130 - barHeight;
+    skillCtx.fillStyle = "steelblue";
+    skillCtx.fillRect(x, y, 30, barHeight);
+    skillCtx.fillStyle = "black";
+    skillCtx.font = "11px Arial";
+    skillCtx.textAlign = "left";
+    skillCtx.fillText(skill.name, x, 145);
+});
+
+</script>
 </body>
 </html>

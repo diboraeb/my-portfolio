@@ -33,7 +33,7 @@
 <p>I am available for internships and freelance web projects from June 2027.</p>
 <p><a href="#contact">Send me a message</a> or <a href="files/cv.pdf"
 download>download my <abbr title="Curriculum Vitae">CV</abbr></a>.</p>
-<button type="button" onclick="document.getElementById('hireDialog').close()">Close</button>
+<button type="button" onclick="document.getElementById('hireDialog').close()">Close</button> </dialog>
 </header>
 <main>
 
@@ -153,32 +153,55 @@ where the important content is &amp; helps screen readers.</p>
     </article>
     
     <article>
-    <h3>My first Program</h3>
-    <p>The first thing I wrote in C++ was: <br><pre><code>#include &ltiostream&gt <br> using namespace std;<br> int main(){<br> cout&lt&lt "Hello World";<br>return 0;<br>}</pre></code></p>
-    <p>Later on I wrote this: <pre><code>#include&ltiostream&gt<br>
+   
+<h3>My first Program</h3>
+
+<p>The first thing I wrote in C++ was:</p>
+
+<pre><code>#include &lt;iostream&gt;
 using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello World";
+    return 0;
+}
+</code></pre>
+
+<p>Later on I wrote this:</p>
+
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
 int main() {
     int n;
-    cout &lt&lt "Enter the number of members: "; 
-    cin &gt&gt n;
+
+    cout &lt;&lt; "Enter the number of members: ";
+    cin &gt;&gt; n;
+
     int numbers[n];
-    for (int i=0; i&lt n i++) {
-        cout &lt&lt "\nEnter number " &lt&lti+1&lt&lt endl;
-        cin &gt&gt numbers[i];
+
+    for (int i = 0; i &lt; n; i++) {
+        cout &lt;&lt; "\nEnter number " &lt;&lt; i+1 &lt;&lt; endl;
+        cin &gt;&gt; numbers[i];
     }
-    cout &lt&lt "\nThe numbers are: " &lt&lt endl;
-    for (int i=0; i&lt n; i++) {
-        cout &lt&lt "Number " &lt&lt i+1 &lt&lt ": " &lt&lt numbers[i] &lt&lt endl;
+
+    cout &lt;&lt; "\nThe numbers are: " &lt;&lt; endl;
+
+    for (int i = 0; i &lt; n; i++) {
+        cout &lt;&lt; "Number " &lt;&lt; i+1 &lt;&lt; ": " &lt;&lt; numbers[i] &lt;&lt; endl;
     }
+
     return 0;
-}</code></pre></p>
+}
+</code></pre>
+
     </article>
     <p><a href="projects.html">See all my projects →</a></p><hr>
 
     <section id="education">
     <h2> Education</h2>
     <h3>Bachelor of Science in Software Engineering</h3>
-    <p>Addis Ababa Science and Technology University, <time datetime="2023-09">September 2023</time> – present</p> </p><hr>
+    <p>Addis Ababa Science and Technology University, <time datetime="2023-09">September 2023</time> – present </p><hr>
     <p>
         <label for="degree">Degree Progress:</label>
         <progress id="degree" value="0.45" max="1">45%</progress>
@@ -268,15 +291,21 @@ int main() {
 <h3>Connect with me</h3>
 <img src="images/connect-banner.png" usemap="#connectmap" alt="Contact banner with GitHub, LinkedIn, and Email" width="600" height="200">
 
-<map name="connectmap"> <area shape="rect"coords="20,40,180,160" href="https://github.com/diboraeb" alt="GitHub">
+<map name="connectmap">
 
-    <area shape="circle" coords="300,100,70" href="https://www.linkedin.com/in/dibora-endris-belay-a26a30361
+    <area shape="rect" coords="20,40,180,160"
+          href="https://github.com/diboraeb"
+          alt="GitHub">
 
-" alt="LinkedIn">
+    <area shape="circle" coords="300,100,70"
+          href="https://www.linkedin.com/in/dibora-endris-belay-a26a30361"
+          alt="LinkedIn">
 
-    <area shape="rect" coords="420,40,580,160" href="mailto:diboraendris@gmail.com" alt="Email">
+    <area shape="rect" coords="420,40,580,160"
+          href="mailto:diboraendris@gmail.com"
+          alt="Email">
+
 </map>
-
 <h3>Where I study</h3>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.940001218184!2d38.8071784735266!3d8.885170691226875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b82a7e392203f%3A0xb05f440eacc98f9f!2sAddis%20Ababa%20Science%20and%20Technology%20University!5e0!3m2!1sen!2set!4v1793799240052!5m2!1sen!2set" width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
 
@@ -329,6 +358,9 @@ int main() {
         <legend>Your Message</legend>
         <label for="reason">Reason for contacting me: </label>
         <select id="reason" name="reason" required>
+            <option value="" selected disabled>
+        Select a reason
+    </option>
             <optgroup label="work">
                 <option value="internship">Internship Offer</option>
                 <option value="freelance">Freelance project</option>
@@ -352,6 +384,7 @@ int main() {
     <button type="submit">Send Message</button>
     <button type="reset">Clear</button>
 </form>
+</section>
 </main>
 <footer>
     <p>&copy; 2026 Dibora Endris. All rights reserved.</p>
